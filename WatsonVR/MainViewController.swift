@@ -39,7 +39,24 @@ class MainViewController: UIViewController, UIImagePickerControllerDelegate, UIN
             self.launchImagePicker(type: .camera)
         }
     }
-    
+  
+    // 画面遷移yasuda
+    @IBAction func goNextViewYasuda(_ sender: Any) {
+      performSegue(withIdentifier: "goYasuda", sender: nil)
+    }
+  
+    // 画面遷移fujiwara
+    @IBAction func goNextViewFujiwara(_ sender: Any) {
+      performSegue(withIdentifier: "goFujiwara", sender: nil)
+    }
+  
+    // 画面遷移iizuka
+    @IBAction func goNextViewIizuka(_ sender: Any) {
+      performSegue(withIdentifier: "goIizuka", sender: nil)
+      
+    }
+ 
+  
     /**
      写真選択ボタンTap
      */
@@ -125,7 +142,7 @@ class MainViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         let appDelegate: AppDelegate = UIApplication.shared.delegate as! AppDelegate
 
         // API呼び出し準備
-        let APIKey = "" // APIKeyを取得してここに記述
+        let APIKey = "57148e0be0e6b81abf7d7a003ae29bbf234900b6" // APIKeyを取得してここに記述
         let url = "https://gateway-a.watsonplatform.net/visual-recognition/api/v3/detect_faces?api_key=" + APIKey + "&version=2016-05-20"
         guard let destURL = URL(string: url) else {
             print ("url is NG: " + url) // debug
